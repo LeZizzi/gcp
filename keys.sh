@@ -15,3 +15,5 @@ gcloud kms keys create rails_master_key --location global \
 gcloud kms encrypt --location global --keyring rb1 \
   --key rails_master_key --plaintext-file ./config/master.key \
   --ciphertext-file ./config/master.key.enc
+gcloud kms encrypt --location global --keyring rb1  --key rb1--plaintext-file ./key.json
+  --ciphertext-file ./key.json.enc
