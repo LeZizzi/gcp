@@ -1,3 +1,5 @@
+gcloud init
+#ensure we are connected to the latest project
 
 # Create a key ring where to hook your encrypted keys
 gcloud kms keyrings create rb1 --location=global
@@ -15,5 +17,5 @@ gcloud kms keys create rails_master_key --location global \
 gcloud kms encrypt --location global --keyring rb1 \
   --key rails_master_key --plaintext-file ./config/master.key \
   --ciphertext-file ./config/master.key.enc
-gcloud kms encrypt --location global --keyring rb1  --key rb1--plaintext-file ./key.json
-  --ciphertext-file ./key.json.enc
+
+gcloud kms encrypt --location global --keyring rbuild  --key rbuildkey --plaintext-file .\rbuild0-261511-f083f56cb989.json  --ciphertext-file ./rbuilder.enc
